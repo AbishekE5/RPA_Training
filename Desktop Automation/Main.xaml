@@ -1,0 +1,322 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="777,2982" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="36">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
+      <x:String>UiPath.Vision.Core.OCR</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="24">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="749,2877" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="OutputExcel" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey 'SysListView32'" sap:VirtualizedContainerService.HintSize="707,154" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="w" KeyModifiers="Alt, Ctrl">
+      <ui:SendHotkey.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2dba4353-2d78-4534-95e2-155ab47f1a63" InformativeScreenshot="e17808c73e8f2a84c8820acf5e1b851d" Selector="&lt;wnd app='explorer.exe' cls='Progman' title='Program Manager' /&gt;&lt;wnd cls='SysListView32' title='FolderView' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:SendHotkey.Target>
+    </ui:SendHotkey>
+    <ui:ReadRange AddHeaders="True" DataTable="[OutputExcel]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="707,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="desktop.xlsx">
+      <ui:ReadRange.Range>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </ui:ReadRange.Range>
+    </ui:ReadRange>
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[OutputExcel]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="707,2464" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="657,2316" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Int32" Name="rowCount" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="615,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[rowCount]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[OutputExcel.Columns.Count]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Sequence DisplayName="Desktop" sap:VirtualizedContainerService.HintSize="615,2124" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'ExpenseIt Hwndwrapp'" sap:VirtualizedContainerService.HintSize="573,1877" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="8a0691b09746402984201b11f7e262b6" Selector="&lt;wnd app='wpf_30_anycpu_expenseit.exe' cls='HwndWrapper*' title='ExpenseIt Standalone' /&gt;">
+                <ui:WindowScope.Body>
+                  <ActivityAction x:TypeArguments="x:Object">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="539,1731" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:Int32" Name="Employee" />
+                        <Variable x:TypeArguments="x:String" Name="output" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'editable text  Email:'" EmptyField="True" sap:VirtualizedContainerService.HintSize="497,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="False">
+                        <ui:TypeInto.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="746cd863-4cca-4e29-ab4e-2bbe694d045f" InformativeScreenshot="b46c80756c42e53ab3ffae780faa54fe" Selector="&lt;ctrl automationid='emailTextBox' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:TypeInto.Target>
+                        <ui:TypeInto.Text>
+                          <InArgument x:TypeArguments="x:String">
+                            <Literal x:TypeArguments="x:String" Value="" />
+                          </InArgument>
+                        </ui:TypeInto.Text>
+                      </ui:TypeInto>
+                      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'editable text  Email:'" EmptyField="True" sap:VirtualizedContainerService.HintSize="497,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" SendWindowMessages="False" SimulateType="False" Text="[row(&quot;Email&quot;).ToString]">
+                        <ui:TypeInto.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="746cd863-4cca-4e29-ab4e-2bbe694d045f" InformativeScreenshot="b46c80756c42e53ab3ffae780faa54fe" Selector="&lt;ctrl automationid='emailTextBox' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:TypeInto.Target>
+                      </ui:TypeInto>
+                      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'editable text'" EmptyField="True" sap:VirtualizedContainerService.HintSize="497,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="False" SimulateType="False" Text="[row(&quot;Employee Number&quot;).ToString]">
+                        <ui:TypeInto.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="88be014a-f8e1-4183-b973-53c88d78fd44" InformativeScreenshot="5aa53bd6a61ca71b251de6e399608797" Selector="&lt;ctrl automationid='employeeNumberTextBox' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:TypeInto.Target>
+                      </ui:TypeInto>
+                      <Assign sap:VirtualizedContainerService.HintSize="497,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[Employee]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int16">[Convert.ToInt16(row("Employees").ToString)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Switch x:TypeArguments="x:Int32" DisplayName="Switch" Expression="[Employee]" sap:VirtualizedContainerService.HintSize="497,333" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                        <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" x:Key="0" Action="Check" DisplayName="Check 'radio button  FTE'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Check_1">
+                          <ui:Check.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5c846666-de98-4b05-9d20-89b51d370c22" InformativeScreenshot="0909818ce5f3927b0fab4ec7f56643d2" Selector="&lt;ctrl automationid='employeeTypeRadioButtons' /&gt;&lt;ctrl name='FTE' role='list item' /&gt;&lt;ctrl name='FTE' role='radio button' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Check.Target>
+                        </ui:Check>
+                        <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" x:Key="1" Action="Check" DisplayName="Check 'radio button  FTE'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Check_2">
+                          <ui:Check.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5c846666-de98-4b05-9d20-89b51d370c22" InformativeScreenshot="5a4deaff45d921a2714a89360f47807e" Selector="&lt;ctrl automationid='employeeTypeRadioButtons' /&gt;&lt;ctrl name='CSG' role='list item' /&gt;&lt;ctrl name='CSG' role='radio button' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Check.Target>
+                        </ui:Check>
+                        <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" x:Key="2" Action="Check" DisplayName="Check 'radio button  FTE'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Check_3">
+                          <ui:Check.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5c846666-de98-4b05-9d20-89b51d370c22" InformativeScreenshot="76237caa22b84dbe750eb62713e180e7" Selector="&lt;ctrl automationid='employeeTypeRadioButtons' /&gt;&lt;ctrl name='Vendor' role='list item' /&gt;&lt;ctrl name='Vendor' role='radio button' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Check.Target>
+                        </ui:Check>
+                      </Switch>
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button'" sap:VirtualizedContainerService.HintSize="497,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition OffsetX="65" OffsetY="10" Position="TopLeft" />
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2f6bd205-e3e0-43f5-81cd-0cd169958f08" InformativeScreenshot="8c2185a4f7e2a73f0985d437d137b4b9" Selector="&lt;ctrl automationid='createExpenseReportButton' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Click.Target>
+                      </ui:Click>
+                      <ui:GetFullText IgnoreHidden="{x:Null}" DisplayName="Get Full Text 'text  277'" sap:VirtualizedContainerService.HintSize="497,106" sap2010:WorkflowViewState.IdRef="GetFullText_1">
+                        <ui:GetFullText.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3f0af7d2-d162-495a-8872-61cde11b3c35" InformativeScreenshot="96d081adb550553706e841792c470cda" Selector="&lt;wnd app='wpf_30_anycpu_expenseit.exe' cls='HwndWrapper*' title='Create Expense Report' /&gt;&lt;ctrl name='277' role='text' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:GetFullText.Target>
+                        <ui:GetFullText.Text>
+                          <OutArgument x:TypeArguments="x:String">[output]</OutArgument>
+                        </ui:GetFullText.Text>
+                      </ui:GetFullText>
+                      <Assign sap:VirtualizedContainerService.HintSize="497,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Object">[row(rowCount-1)]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Object">[output]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  OK'" sap:VirtualizedContainerService.HintSize="497,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a9c92b87-f359-4286-a6b4-4a13c788abdf" InformativeScreenshot="cabaa36aa86c5fcab92b8bf91d6cded1" Selector="&lt;wnd app='wpf_30_anycpu_expenseit.exe' cls='HwndWrapper*' title='Create Expense Report' /&gt;&lt;ctrl name='OK' role='push button' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Click.Target>
+                      </ui:Click>
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  OK'" sap:VirtualizedContainerService.HintSize="497,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition OffsetX="40" OffsetY="10" Position="TopLeft" />
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="457bc7d7-d496-4a22-ba61-8294f786ad03" InformativeScreenshot="56610df53e3a1a17a3185fc4da013966" Selector="&lt;wnd app='wpf_30_anycpu_expenseit.exe' cls='#32770' title='ExpenseIt Standalone' /&gt;&lt;wnd ctrlid='2' title='OK' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Click.Target>
+                      </ui:Click>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:WindowScope.Body>
+              </ui:WindowScope>
+              <ui:WriteRange AddHeaders="True" DataTable="[OutputExcel]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="573,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="desktop.xlsx">
+                <ui:WriteRange.StartingCell>
+                  <InArgument x:TypeArguments="x:String">
+                    <Literal x:TypeArguments="x:String" Value="" />
+                  </InArgument>
+                </ui:WriteRange.StartingCell>
+              </ui:WriteRange>
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+  </Sequence>
+</Activity>
