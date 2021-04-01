@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>966,1386</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>965,1386</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ClickButton_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -66,6 +66,7 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Click Button in the Bp travel Browser" DisplayName="ClickButton" sap:VirtualizedContainerService.HintSize="735,1281" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -96,7 +97,7 @@
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:UiElementExists DisplayName="Element Exists 'SPAN'" Exists="[ButtonStatus]" sap:VirtualizedContainerService.HintSize="579,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                   <ui:UiElementExists.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c4eb37da-a866-4f63-b89a-e9756788cc3c" InformativeScreenshot="9a60b18fe8c8f37c8a75f64e15da156f" Selector="&lt;webctrl parentid='body' tag='SPAN' /&gt;">
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c4eb37da-a866-4f63-b89a-e9756788cc3c" InformativeScreenshot="9189ae4f35433d452d38326adc460ca2" Selector="&lt;webctrl parentid='body' tag='SPAN' aaname='{{ButtonName}}' /&gt;&#xD;&#xA;">
                       <ui:Target.TimeoutMS>
                         <InArgument x:TypeArguments="x:Int32" />
                       </ui:Target.TimeoutMS>
@@ -159,7 +160,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[exception.Message]" />
-              <Throw Exception="[new BusinessRuleException(&quot;Click Button not found&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+              <Throw Exception="[new BusinessRuleException(&quot;Create Quote Button not found&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
             </Sequence>
           </ActivityAction>
         </Catch>
