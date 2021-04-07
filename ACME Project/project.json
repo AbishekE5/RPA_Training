@@ -3,7 +3,7 @@
   "description": "Blank Process",
   "main": "Main.xaml",
   "dependencies": {
-    "AcmeLibrary": "[1.0.3]",
+    "AcmeLibrary": "[1.0.35]",
     "BP.Travel.Library": "[2.0.3.6]",
     "UiPath.Excel.Activities": "[2.10.3-preview]",
     "UiPath.Mail.Activities": "[1.10.3-preview]",

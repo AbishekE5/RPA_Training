@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="826,939" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ad="clr-namespace:AcmeLibrary.Dashboard;assembly=AcmeLibrary" xmlns:al="clr-namespace:AcmeLibrary.Launch;assembly=AcmeLibrary" xmlns:al1="clr-namespace:AcmeLibrary.Login_to_Acme;assembly=AcmeLibrary" xmlns:aw="clr-namespace:AcmeLibrary.Work_Items;assembly=AcmeLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="865,1826" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ad="clr-namespace:AcmeLibrary.Dashboard;assembly=AcmeLibrary" xmlns:al="clr-namespace:AcmeLibrary.Launch;assembly=AcmeLibrary" xmlns:al1="clr-namespace:AcmeLibrary.Login_to_Acme;assembly=AcmeLibrary" xmlns:aw="clr-namespace:AcmeLibrary.Work_Items;assembly=AcmeLibrary" xmlns:aw1="clr-namespace:AcmeLibrary.Work_Item_Details;assembly=AcmeLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="74">
+    <scg:List x:TypeArguments="x:String" Capacity="76">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -39,10 +39,16 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>System.Globalization</x:String>
       <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>AcmeLibrary.Work_Item_Details</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="30">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="58">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -72,46 +78,93 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="526,834" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="875,1721" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:Browser" Name="ACMEBrowserTab" />
       <Variable x:TypeArguments="x:String" Name="CellValue" />
       <Variable x:TypeArguments="s:String[]" Name="Year" />
       <Variable x:TypeArguments="x:Int32" Name="ValidYear" />
       <Variable x:TypeArguments="x:Int32" Name="Count" />
+      <Variable x:TypeArguments="x:Int32" Default="1" Name="RowCounter" />
+      <Variable x:TypeArguments="x:Int32" Name="TotalRows" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <al:Launch ACMEBrowserTab="[ACMEBrowserTab]" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="Launch_1" URL="https://acme-test.uipath.com/" />
-    <al1:Login ACMEBrowserTab="[ACMEBrowserTab]" sap:VirtualizedContainerService.HintSize="484,79" sap2010:WorkflowViewState.IdRef="Login_1" Password="[(new System.Net.NetworkCredential(&quot;&quot;, “adminrpa”)).SecurePassword]" UserName="abishekanand.joshua@e5.ai" />
-    <ad:Navigate_Tab ACMEBrowserTab="[ACMEBrowserTab]" DisplayName="Navigate Tab" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="Navigate_Tab_1" TabName=" Work Items" />
-    <aw:Read_Cell RowCount="{x:Null}" ACMEBrowser="[ACMEBrowserTab]" CellValue="[CellValue]" ColumnName="Date" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="Read_Cell_1" RowNumber="[Count]" />
-    <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_2">
-      <Assign.To>
-        <OutArgument x:TypeArguments="s:String[]">[Year]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="s:String[]">[Split(CellValue,"-")]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_3">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:Int32">[ValidYear]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:Int16">[Convert.ToInt16(Year(0))]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <If Condition="[ValidYear &gt; 2018]" sap:VirtualizedContainerService.HintSize="484,237" sap2010:WorkflowViewState.IdRef="If_2">
-      <If.Then>
-        <aw:Click_Actions ActionName="Actions" DisplayName="Click Actions" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Click_Actions_3" />
-      </If.Then>
-    </If>
+    <al:Launch ACMEBrowserTab="[ACMEBrowserTab]" sap:VirtualizedContainerService.HintSize="833,22" sap2010:WorkflowViewState.IdRef="Launch_1" URL="https://acme-test.uipath.com/" />
+    <al1:Login ACMEBrowserTab="[ACMEBrowserTab]" sap:VirtualizedContainerService.HintSize="833,79" sap2010:WorkflowViewState.IdRef="Login_1" Password="[(new System.Net.NetworkCredential(&quot;&quot;, “adminrpa”)).SecurePassword]" UserName="abishekanand.joshua@e5.ai" />
+    <ad:Navigate_Tab ACMEBrowserTab="[ACMEBrowserTab]" DisplayName="Navigate Tab" sap:VirtualizedContainerService.HintSize="833,22" sap2010:WorkflowViewState.IdRef="Navigate_Tab_1" TabName=" Work Items" />
+    <aw:Get_Total_Rows AcmeBrowser="[ACMEBrowserTab]" DisplayName="Get Total Rows" sap:VirtualizedContainerService.HintSize="833,22" sap2010:WorkflowViewState.IdRef="Get_Total_Rows_1" TotalRows="[TotalRows]" />
+    <ui:InterruptibleDoWhile Condition="[RowCounter &lt; TotalRows+1]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="833,1324" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+      <ui:InterruptibleDoWhile.Body>
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="797,1159" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="755,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[RowCounter]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">[RowCounter +1]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Sequence sap:VirtualizedContainerService.HintSize="755,967" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="DownloadExists" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <aw:Read_Cell RowCount="{x:Null}" ACMEBrowser="[ACMEBrowserTab]" CellValue="[CellValue]" ColumnName="Date" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="713,22" sap2010:WorkflowViewState.IdRef="Read_Cell_3" RowNumber="[RowCounter]" />
+            <Assign sap:VirtualizedContainerService.HintSize="713,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:String[]">[Year]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:String[]">[Split(CellValue,"-")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="713,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[Year(0)]" />
+            <Assign sap:VirtualizedContainerService.HintSize="713,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[ValidYear]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int16">[Convert.ToInt16(Year(0))]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <If Condition="[ValidYear &gt; 2018]" sap:VirtualizedContainerService.HintSize="713,514" sap2010:WorkflowViewState.IdRef="If_2">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="334,357" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <aw:Click_Actions argument1="{x:Null}" ACMEBrowserTab="[ACMEBrowserTab]" ActionName="Actions" DisplayName="Click Actions" sap:VirtualizedContainerService.HintSize="292,22" sap2010:WorkflowViewState.IdRef="Click_Actions_1" RowNumber="[RowCounter]" />
+                  <aw1:Download_Check_Request ACMEBrowserTab="[ACMEBrowserTab]" DisplayName="Download Check Request" FilePath="D:\Uipath\Download\Invoice-Result.pdf" sap:VirtualizedContainerService.HintSize="292,79" sap2010:WorkflowViewState.IdRef="Download_Check_Request_1" />
+                  <aw1:Update_Work_Item ACMEBrowserTab="[ACMEBrowserTab]" Comments="Completed" DisplayName="Update Work Item" sap:VirtualizedContainerService.HintSize="292,22" sap2010:WorkflowViewState.IdRef="Update_Work_Item_1" Status="C" />
+                  <ui:GoBack Browser="[ACMEBrowserTab]" DisplayName="Go Back" sap:VirtualizedContainerService.HintSize="292,22" sap2010:WorkflowViewState.IdRef="GoBack_1" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Year is below 2018&quot;]" />
+              </If.Else>
+            </If>
+          </Sequence>
+        </Sequence>
+      </ui:InterruptibleDoWhile.Body>
+    </ui:InterruptibleDoWhile>
   </Sequence>
 </Activity>
